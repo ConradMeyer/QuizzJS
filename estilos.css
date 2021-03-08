@@ -10,49 +10,46 @@ body {
 }
 
 .header {
-    background-color: rgb(209, 209, 33);
+    background-color: darkgoldenrod;
     padding: 20px 0;
 }
-
-h1 {
-    text-align: center;
-    /* text-decoration: underline; */
-    font-size: 50px;
-}
-
-.header h2 {
-    margin: 20px auto;
-    width: 90%;
-    text-align: center;
-    max-width: 900px;
-    background-color: rgb(209, 208, 208);
-}
-
-.form {
-    margin: 0px auto;
-    text-align: center;
-}
-    .form input {
-        margin: 10px;
-        padding: 5px;
-        border-radius: 10px;
-        border: 1px solid black;
-    }
-    .form button {
-        margin: 10px;
-        width: 100px;
+    .header h1 {
         text-align: center;
-        font-weight: bold;
-        padding: 5px;
-        border-radius: 10px;
-        color: whitesmoke;
-        border: none;
-        background-color: black;
+        /* text-decoration: underline; */
+        font-size: 50px;
     }
-        .form button:hover {
-            cursor: pointer;
-            transform: scale(1.05)
+    .header h2 {
+        margin: 20px auto;
+        width: 90%;
+        text-align: center;
+        max-width: 900px;
+        background-color: rgb(209, 208, 208);
+    }
+    .form {
+        margin: 0px auto;
+        text-align: center;
+    }
+        .form input {
+            margin: 10px;
+            padding: 5px;
+            border-radius: 10px;
+            border: 1px solid black;
         }
+        .form button {
+            margin: 10px;
+            width: 100px;
+            text-align: center;
+            font-weight: bold;
+            padding: 5px;
+            border-radius: 10px;
+            color: whitesmoke;
+            border: none;
+            background-color: black;
+        }
+            .form button:hover {
+                cursor: pointer;
+                transform: scale(1.05)
+            }
 
 .resultado {
     margin: 20px auto;
