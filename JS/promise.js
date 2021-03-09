@@ -20,8 +20,7 @@ function getQuestions(maxNumberQuestions = 5) {
 	});
 }
 
-function pintar(el) {
-	// console.log(el);
+function pintar(datos) {
 	const caja = document.createElement("div")
 	caja.setAttribute("class", "resultado")
 	QUIZZ.appendChild(caja)
@@ -36,32 +35,40 @@ function pintar(el) {
 	caja.appendChild(respuestas)
 
 	let quest = document.createElement("h2")
-	let questText = document.createTextNode(el.question)
+	let questText = document.createTextNode(datos.question)
 	quest.appendChild(questText)
 	pregunta.appendChild(quest)
 
 	let answA = document.createElement("h3")
-	let answTextA = document.createTextNode(el.answers.answer_a)
+	let answTextA = document.createTextNode(datos.answers.answer_a)
+	answA.ClassName = "answer_a"
 	answA.appendChild(answTextA)
 	respuestas.appendChild(answA)
 
 	let answB = document.createElement("h3")
-	let answTextB = document.createTextNode(el.answers.answer_b)
+	let answTextB = document.createTextNode(datos.answers.answer_b)
+	answB.ClassName = "answer_b"
 	answB.appendChild(answTextB)
 	respuestas.appendChild(answB)
 
 	let answC = document.createElement("h3")
-	let answTextC = document.createTextNode(el.answers.answer_c)
+	let answTextC = document.createTextNode(datos.answers.answer_c)
+	answC.ClassName = "answer_c"
 	answC.appendChild(answTextC)
 	respuestas.appendChild(answC)
 
-	// let totalAnsw = document.querySelectorAll("h3")
-	// totalAnsw.forEach(el => el.addEventListener("click", ()=> comparar(el)))
+	let totalAnsw = [answA, answB, answC]
+	totalAnsw.forEach(el => el.addEventListener("click", ()=> comparar(el, datos)))
 
 }
 
-function comparar(el){
-	console.log(el);
+function comparar(el, datos){
+	console.log(el.ClassName, datos);
+	if (el.ClassName == datos.correct_answer) {
+		el.setAttribute("class", "right")
+	} else {
+		el.setAttribute("class", "wrong")
+	}
 }
 
 BTN.addEventListener("click", ()=>{
@@ -70,4 +77,6 @@ BTN.addEventListener("click", ()=>{
 		.catch(error => console.error(error))
 })
 
-RESET.addEventListener("click", ()=> window.location.reload())
+RESET.addEventListener("click", ()=> {
+	window.location.reload()
+	INPUT.value = ""})
